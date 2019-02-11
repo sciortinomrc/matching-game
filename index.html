@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Matching Game 2019</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+	<header>
+		<h1>THE MATCHING GAME OF THE YEAR</h1>
+	</header>
+	<div id="selection">
+		<select onchange="getCards(this.value);" class="button">
+			<option id="mode" value="0">Select mode</option>
+			<option id="easy" value="2">Easy</option>
+			<option id="medium" value="4">Medium</option>
+			<option id="hard" value="6">Hard</option>
+			<option id="extreme" value="8">Extreme</option>
+		</select>
+		<input type="text" readonly id="moves" class="button"></p>
+		<input type="text" readonly id="timer" class="button"></p>
+		<input type="button" class="button" onclick="resetGame()" value="Reset Current Game"/>
+	</div>
+	<hr/>
+	<div id="alert">
+		<div>
+			<p id="message"></p>
+			<div id="button" onclick="hideAlert();">Ok</div>
+		</div>
+	</div>
+	<div id="board">
+	</div>
+	<footer>
+		<a href="http://sciortinomrc.github.com" target="_blank"><i class="fab fa-github"></i></a>
+		<a href="https://www.linkedin.com/in/marco-sciortino-429938155/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+		<a href="http://facebook.com/marco.sciortino.37" target="_blank"><i class="fab fa-facebook-f"></i></a>
+		<a href="http://sciortino-mrc.netlify.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+	</footer>
+	<script type="text/javascript" src="./jsscript.js"></script>
+</body>
+</html>

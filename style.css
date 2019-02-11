@@ -1,0 +1,201 @@
+body{
+	text-align: center;
+	align-items: center;
+	margin: 0px;
+	padding: 0px;
+	height: 99vh;
+	color: #BAA293;
+	background: linear-gradient(to bottom, #5B4A40, #5B4A40 65%, #130A05);
+	font-family: 'Prompt', sans-serif;
+	padding: 0px; margin: 0px;
+}
+a{
+	text-decoration: none;
+	color: #BAA293;
+	opacity: 0.2;
+}
+.button{
+	padding:0px;
+	width: 200px;
+	height:27px;
+	background-color: #BAA293;
+	color: #5B4A40;
+	outline: none;
+	border: none;
+	font-size: 20px;
+	text-align-last: center;
+	cursor: default;
+}
+input[type=button], select{
+	cursor: pointer!important;
+}
+select{
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+input[type=button]{
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+.button:hover{
+	background-color: #a88170;
+}
+
+#timer, #moves {
+	display: none;
+}
+footer{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	padding: 10px 0px;
+	background-color: #0f0f0f;
+	box-shadow: -5px -5px 15px rgba(0,0,0,0.3), 5px -5px 15px rgba(0,0,0,0.3);
+}
+#alert{
+	position: absolute;
+	width: 100%;
+	height:100%;
+	background-color: rgba(255,255,255,0.5);
+	z-index: 100;
+	top: 0px;
+	left: 0px;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 28px;
+}
+#alert p{
+	position:absolute;
+	margin-left:-10px;
+	width: 230px;
+	height: 160px;
+}
+#alert div{
+	background-color:  #BAA293;
+	color: #5B4A40;
+	width: 250px;
+	height: 180px;
+	display: flex;
+	text-align: center;
+	justify-content: flex-end;
+}
+#alert div div{
+	position: relative;
+	background-color: #130A05;
+	align-self: flex-end;
+	justify-content: center;
+	color: #AB8C78;
+	border-radius: 5px;
+	width: 40px;
+	height: 20px;
+	cursor: pointer;
+	font-size: 14px;
+}
+@keyframes animated-title{
+	0%{ transform: scale(1); }
+	50%{ transform: scale(1.03);}
+	100%{ transform: scale(1); }
+}
+h1{ 
+	animation: animated-title 8s infinite;
+	margin: auto; 
+	padding-top:20%;
+	padding-bottom:10px;
+	font-size: 5em;
+	font-family: 'Major Mono Display', monospace;
+	text-transform: uppercase;
+	transition: padding 0.7s ease-in-out 0.7s, font-size 0.7s ease-out;
+	width: 90%;
+}	
+hr{
+	color: #1E1E1E;
+	border-color: #1E1E1E;
+	background-color: #1E1E1E;
+
+}
+#selection{ 
+	display: flex;
+	margin: auto; 
+	justify-content: center }
+
+#board{
+	margin: auto;
+	width: 0px;
+	height: 0px;
+	border: 1px solid black;
+	border-radius: 15px;
+	display: none;
+	grid-template-columns: 1fr;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	grid-gap:20px;
+	padding:20px;
+	background-color: #BAA293;
+	box-shadow: inset -10px -10px 37px rgba(0,0,0,0.4), inset 10px -10px 37px rgba(0,0,0,0.4);
+	overflow: hidden;
+	transition: height 0.2s ease-in, width 0.15s ease-in;
+}
+#board>div{
+	display: grid;
+	margin: auto;
+	width: 100%;
+	grid-template-columns: repeat(auto-fit, minmax(80px,1fr));
+	justify-items: center;
+	grid-template-rows: 1fr;
+}
+#board p{
+	color: #1E1E1E;
+	width:100%;
+	margin: 0px;
+	margin-top:10px;
+	padding: 0px;
+	font-size: 3em;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+	                  supported by Chrome and Opera */
+}
+.main-card{
+	width:80px;
+	height:80px;
+	box-shadow: -3px 3px 8px rgba(0,0,0,0.4), 3px 3px 8px rgba(0,0,0,0.4);
+	perspective: 1000px;
+	background-color: transparent;
+	border-radius: 15px;
+	position:relative;
+	transition: transform 0.2s ease-in-out;
+	transform-style: preserve-3d;
+}
+.card-front, .card-back{
+	position:absolute;
+	width:100%;
+	height: 100%;
+	border-radius: 15px;
+	border: 1px solid black;
+}
+.card-back{
+	background-color: #A41900;
+	cursor: pointer;
+}
+.card-back:hover{
+	background-color: #761200;
+}
+.card-front, .card-back{
+	backface-visibility: hidden;
+}
+.card-front{
+	transform: rotateY(180deg);
+	background-color: #AB8C78;
+	transition: background-color 0.3s ease-out;
+}
+@media (max-width: 1020px){
+	#board{
+		width: 90%!important;
+	}
+}
